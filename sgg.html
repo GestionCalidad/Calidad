@@ -19,3 +19,86 @@
     </div>
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGG - Documentación Interactiva</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Szwao0f6P59z0F+1UvXyQY+n+n8K4oYh4Y2zY1oQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content-area">
+        <h1>Sistema de Gestión General (SGG) - Visor Interactivo</h1>
+        <p>Selecciona una pestaña para visualizar los documentos clave del SGG: Indicadores, Objetivos o Mapa de Procesos.</p>
+        
+        <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="indicadores">Indicadores</button>
+            <button class="tab-btn" data-tab="objetivos">Objetivos Estratégicos</button>
+            <button class="tab-btn" data-tab="mapa">Mapa de Procesos</button>
+        </div>
+        
+        <div class="tab-content-container">
+            
+            <div id="indicadores" class="tab-pane active">
+                <h2>Indicadores de Desempeño SGG</h2>
+                <img src="dashboard/indicadores_sgg.png" alt="Gráfico de Indicadores SGG" class="indicator-image">
+                <p>Visualización de las métricas clave del Sistema de Gestión de Calidad (SGC).</p>
+            </div>
+
+            <div id="objetivos" class="tab-pane">
+                <h2>Objetivos de Calidad y Metas</h2>
+                <img src="dashboard/objetivos_sgg.png" alt="Tabla de Objetivos SGG" class="indicator-image">
+                <p>Detalle de los objetivos anuales de calidad y su seguimiento porcentual.</p>
+            </div>
+            
+            <div id="mapa" class="tab-pane">
+                <h2>Mapa Estratégico de Procesos</h2>
+                <img src="dashboard/mapa_procesos_sgg.png" alt="Mapa Estratégico" class="indicator-image">
+                <p>Diagrama que ilustra la interconexión entre todos los procesos de la universidad.</p>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-button">⬅️ Volver al Menú Principal</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const panes = document.querySelectorAll('.tab-pane');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 1. Oculta todos los paneles y desactiva todos los botones
+                    panes.forEach(pane => pane.classList.remove('active'));
+                    buttons.forEach(btn => btn.classList.remove('active'));
+
+                    // 2. Encuentra el ID del panel a mostrar (usando data-tab)
+                    const tabId = button.getAttribute('data-tab');
+                    const targetPane = document.getElementById(tabId);
+
+                    // 3. Muestra el panel objetivo y activa el botón
+                    if (targetPane) {
+                        targetPane.classList.add('active');
+                        button.classList.add('active');
+                    }
+                });
+            });
+            
+            // Asegurar que el primer botón y panel estén activos al cargar
+            if (buttons.length > 0) {
+                 buttons[0].click();
+            }
+        });
+    </script>
+</body>
+</html>
