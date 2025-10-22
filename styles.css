@@ -1,7 +1,9 @@
-/* Colores basados en la imagen:
-   Fondo: Gris/Azul Oscuro (~#263842)
-   Acento/Íconos: Azul Brillante (~#3498db)
-   Tarjetas/Texto: Blanco
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Colores SGC Corporativo:
+   Fondo Base: #263842 (Gris/Azul Oscuro)
+   Acento/Primario: #3498db (Azul Brillante)
+   Tarjetas/Contenido: #FFFFFF (Blanco Puro)
 */
 
 * {
@@ -23,9 +25,17 @@ body {
     padding: 40px;
 }
 
+/* --- Estilo para el Logo de la Cabecera --- */
+.header-logo {
+    max-width: 800px; /* Ancho máximo para el logo */
+    width: 90%; /* Ocupa el 90% del ancho del contenedor del header */
+    height: auto; /* Mantiene la proporción */
+    margin-bottom: 30px; /* Espacio debajo del logo */
+}
+
 .main-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px; /* Ajuste para el espacio debajo del título */
     padding-top: 20px;
 }
 
@@ -41,30 +51,30 @@ body {
     opacity: 0.8;
 }
 
+/* --- Estilos del Menú de Tarjetas --- */
 .menu-container {
     display: flex;
     justify-content: center;
-    gap: 25px; /* Espacio entre las tarjetas */
+    gap: 25px;
     max-width: 1000px;
     width: 100%;
 }
 
 .menu-card {
-    /* Estilo Base de la Tarjeta */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Permite que se distribuyan uniformemente */
+    width: 100%;
     max-width: 200px;
-    height: 250px; /* Alto fijo, similar a la imagen */
+    height: 250px;
     
-    background-color: #FFFFFF; /* Blanco puro */
-    color: #263842; /* Texto en color oscuro del fondo */
+    background-color: #FFFFFF;
+    color: #263842;
     text-decoration: none;
     text-align: center;
     
-    border-radius: 8px; /* Esquinas suavemente redondeadas */
+    border-radius: 8px;
     padding: 30px 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     
@@ -72,40 +82,37 @@ body {
 }
 
 .card-icon {
-    /* Estilo del Ícono */
-    font-size: 3.5em; /* Tamaño grande */
-    color: #3498db; /* Azul de acento (similar a la imagen) */
+    font-size: 3.5em;
+    color: #3498db; /* Azul de acento */
     margin-bottom: 20px;
-    padding-top: 15px; /* Pequeño ajuste visual */
+    padding-top: 15px;
 }
 
 .card-text {
-    /* Estilo del Texto */
     font-size: 1.1em;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: 1.3; /* Para el texto largo SGG */
-    margin-top: auto; /* Empuja el texto hacia abajo */
+    line-height: 1.3;
+    margin-top: auto;
 }
 
-/* Efecto al pasar el ratón (Hover) */
 .menu-card:hover {
-    transform: translateY(-8px); /* Se levanta sutilmente */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
-    background-color: #F8F8F8; /* Un blanco ligeramente diferente para el feedback visual */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background-color: #F8F8F8;
 }
 
 
-/* --- Estilos de las Subpáginas (Mantiene la coherencia Dark Mode) --- */
+/* --- Estilos de las Subpáginas (Contenido Interno) --- */
 .content-area {
-    background-color: #FFFFFF; /* Fondo Blanco para el contenido */
-    padding: 40px 60px;
+    background-color: #FFFFFF;
+    padding: 50px 80px; /* AUMENTADO para más espacio */
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra intensa en fondo oscuro */
-    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 1100px; /* AUMENTADO ANCHO MÁXIMO DEL CONTENEDOR */
     text-align: center;
-    border-top: 5px solid #3498db; /* Línea de acento azul */
-    color: #333333; /* Texto oscuro sobre fondo blanco */
+    border-top: 5px solid #3498db;
+    color: #333333;
 }
 
 .content-area h1 {
@@ -126,7 +133,7 @@ body {
 
 .indicator-image {
     width: 100%;
-    max-width: 700px; 
+    max-width: 900px; /* AUMENTADO ANCHO MÁXIMO DE LAS IMÁGENES */
     height: auto;
     border-radius: 4px;
     margin-bottom: 35px;
@@ -136,7 +143,7 @@ body {
 
 .back-button {
     display: inline-block;
-    background-color: #3498db; /* Azul de acento */
+    background-color: #3498db;
     color: #FFFFFF;
     padding: 12px 25px;
     text-decoration: none;
@@ -149,12 +156,10 @@ body {
 }
 
 .back-button:hover {
-    background-color: #2980b9; /* Azul ligeramente más oscuro */
+    background-color: #2980b9;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
-
-
 
 /* --- Estilos para la Funcionalidad de Pestañas (Tabs) --- */
 
@@ -165,45 +170,43 @@ body {
     margin-bottom: 30px;
     border-bottom: 2px solid #EFEFEF;
     padding-bottom: 10px;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan si hay demasiados */
 }
 
 .tab-btn {
     background-color: transparent;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
     color: #555555;
     transition: all 0.3s ease;
     border-radius: 4px 4px 0 0;
     border-bottom: 3px solid transparent;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
 }
 
 .tab-btn:hover {
     color: #263842;
 }
 
-/* Estilo para la pestaña activa (la viñeta seleccionada) */
 .tab-btn.active {
     color: #263842;
     border-bottom: 3px solid #3498db;
     background-color: #F9F9F9;
 }
 
-/* Ocultar todos los paneles por defecto */
 .tab-pane {
     display: none;
     padding-top: 20px;
     text-align: center;
 }
 
-/* Mostrar solo el panel activo */
 .tab-pane.active {
     display: block;
 }
 
-/* Ajustes para títulos dentro de las pestañas */
 .tab-pane h2 {
     font-size: 1.6em;
     color: #3498db;
