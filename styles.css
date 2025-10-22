@@ -13,13 +13,13 @@
 }
 
 body {
-    /* Fondo oscuro corporativo (similar al de la imagen) */
+    /* Fondo oscuro corporativo */
     background-color: #263842; 
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Centra el contenido en el medio de la pantalla */
     align-items: center;
     min-height: 100vh;
     padding: 40px;
@@ -30,12 +30,12 @@ body {
     max-width: 800px; /* Ancho máximo para el logo */
     width: 90%; /* Ocupa el 90% del ancho del contenedor del header */
     height: auto; /* Mantiene la proporción */
-    margin-bottom: 30px; /* Espacio debajo del logo */
+    margin-bottom: 30px; 
 }
 
 .main-header {
     text-align: center;
-    margin-bottom: 40px; /* Ajuste para el espacio debajo del título */
+    margin-bottom: 40px; 
     padding-top: 20px;
 }
 
@@ -106,10 +106,14 @@ body {
 /* --- Estilos de las Subpáginas (Contenido Interno) --- */
 .content-area {
     background-color: #FFFFFF;
-    padding: 50px 80px; /* AUMENTADO para más espacio */
+    padding: 50px 80px;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    max-width: 1100px; /* AUMENTADO ANCHO MÁXIMO DEL CONTENEDOR */
+    
+    /* CONFIGURACIÓN CLAVE para el 85% de ancho de pantalla */
+    max-width: 85vw; 
+    width: 100%;
+    
     text-align: center;
     border-top: 5px solid #3498db;
     color: #333333;
@@ -133,7 +137,8 @@ body {
 
 .indicator-image {
     width: 100%;
-    max-width: 900px; /* AUMENTADO ANCHO MÁXIMO DE LAS IMÁGENES */
+    /* Permite que la imagen ocupe todo el ancho del contenedor (85vw) */
+    max-width: 100%; 
     height: auto;
     border-radius: 4px;
     margin-bottom: 35px;
@@ -161,7 +166,7 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Estilos para la Funcionalidad de Pestañas (Tabs) --- */
+/* --- Estilos para la Funcionalidad de Pestañas (Tabs en SGG) --- */
 
 .tab-buttons {
     display: flex;
@@ -170,7 +175,7 @@ body {
     margin-bottom: 30px;
     border-bottom: 2px solid #EFEFEF;
     padding-bottom: 10px;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan si hay demasiados */
+    flex-wrap: wrap; /* Evita que los botones salgan de la pantalla en dispositivos pequeños */
 }
 
 .tab-btn {
@@ -184,7 +189,7 @@ body {
     transition: all 0.3s ease;
     border-radius: 4px 4px 0 0;
     border-bottom: 3px solid transparent;
-    white-space: nowrap; /* Evita que el texto del botón se rompa */
+    white-space: nowrap; 
 }
 
 .tab-btn:hover {
@@ -198,13 +203,13 @@ body {
 }
 
 .tab-pane {
-    display: none;
+    display: none; /* Oculta el contenido por defecto */
     padding-top: 20px;
     text-align: center;
 }
 
 .tab-pane.active {
-    display: block;
+    display: block; /* Muestra el contenido activo con JavaScript */
 }
 
 .tab-pane h2 {
