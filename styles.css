@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap');
 
-/* Colores SGC Corporativo:
-   Fondo Base: #263238 (Gris Oscuro)
-   Fondo Contenedor: #EFEFEF (Gris Claro Formal)
-   Acento/Primario: #00BCD4 (Azul Profundo)
-   Tarjetas: #FFFFFF (Blanco Puro)
-*/
+/* === Colores institucionales === */
+:root {
+    --color-bg-dark: #263238;
+    --color-bg-light: #EFEFEF;
+    --color-accent: #00BCD4;
+    --color-white: #FFFFFF;
+    --color-text-dark: #263238;
+}
 
+/* --- Estilo base --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,142 +17,141 @@
 }
 
 body {
-    background-color: #263238; /* Fondo Oscuro Corporativo */
-    color: #333333;
     font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #263238, #37474F);
+    color: var(--color-text-dark);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 40px;
 }
 
+/* --- Encabezado --- */
+.site-header {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 40px 10px 20px;
+}
+
+.site-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+.site-header p {
+    font-weight: 300;
+    opacity: 0.9;
+    font-size: 1.1em;
+}
+
+/* --- Contenedor del menú --- */
 .menu-container {
-    background-color: #EFEFEF; /* Contenedor Gris Claro */
+    background-color: var(--color-bg-light);
     padding: 60px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; 
+    gap: 35px;
     max-width: 1000px;
+    margin-bottom: 60px;
+    transition: all 0.3s ease;
 }
 
-.menu-sphere { /* Nombre de clase mantenido para evitar cambiar index.html */
+/* --- Tarjetas del menú --- */
+.menu-card {
+    background: var(--color-white);
+    width: 220px;
+    height: 160px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px; /* Ancho fijo para las tarjetas */
-    height: 150px; /* Alto fijo para las tarjetas */
-    border-radius: 5px;
-    color: #263238; /* Texto oscuro */
     text-decoration: none;
-    text-align: center;
-    cursor: pointer;
+    color: var(--color-text-dark);
     position: relative;
     overflow: hidden;
-
-    /* Estilo Tarjeta SGC */
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
-    border: 1px solid #DCE0E3; /* Borde muy claro */
-    
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid transparent;
 }
 
-/* Efecto al pasar el ratón (Hover) */
-.menu-sphere:hover {
-    transform: translateY(-5px); /* Se levanta */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    border-color: #00BCD4; /* Borde se acentúa */
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    border-top: 5px solid var(--color-accent);
 }
 
-/* Borde de acento inferior en hover */
-.menu-sphere::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
+/* --- Iconos --- */
+.icon {
+    font-size: 2.3em;
+    color: var(--color-accent);
+    margin-bottom: 15px;
 }
 
-.menu-sphere:hover::after {
-    background-color: #00BCD4; /* Azul Profundo de acento */
-}
-
-.sphere-text {
-    font-family: 'Oswald', sans-serif; /* Fuente corporativa para el menú */
+/* --- Texto --- */
+.menu-text {
+    font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    color: #263238;
-    font-size: 1.3em;
+    font-size: 1.2em;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-/* Eliminamos los diferentes tamaños de esferas, ya que las tarjetas tienen tamaño fijo */
-.small-sphere, .medium-sphere, .large-sphere {
-    width: 220px;
-    height: 140px;
-}
-
-
-/* --- Estilos de las Subpáginas (Limpios y Serios) --- */
+/* --- Subpáginas --- */
 .content-area {
-    background-color: #FFFFFF; /* Fondo blanco */
+    background-color: #FFFFFF;
     padding: 40px 60px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     max-width: 900px;
     text-align: center;
-    border-top: 5px solid #00BCD4; /* Línea de acento SGC */
+    border-top: 5px solid var(--color-accent);
+    margin-top: 60px;
 }
 
 .content-area h1 {
     font-family: 'Oswald', sans-serif;
-    color: #263238; 
+    color: var(--color-text-dark);
     margin-bottom: 20px;
     font-size: 2.2em;
-    font-weight: 700;
 }
 
 .content-area p {
-    font-family: 'Roboto', sans-serif;
     color: #555555;
     font-size: 1.1em;
     line-height: 1.7;
     margin-bottom: 30px;
 }
 
+/* --- Imagen --- */
 .indicator-image {
     width: 100%;
-    max-width: 700px; 
+    max-width: 700px;
     height: auto;
-    border-radius: 4px;
+    border-radius: 8px;
     margin-bottom: 35px;
-    border: 1px solid #DCE0E3; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #DCE0E3;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Botón de volver --- */
 .back-button {
     display: inline-block;
-    background-color: #00BCD4; /* Azul de acento */
+    background-color: var(--color-accent);
     color: #FFFFFF;
     padding: 12px 25px;
     text-decoration: none;
-    border-radius: 4px; 
+    border-radius: 6px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
     font-size: 1em;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .back-button:hover {
-    background-color: #00A3B5; /* Azul ligeramente más oscuro */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #00A3B5;
+    transform: translateY(-3px);
 }
