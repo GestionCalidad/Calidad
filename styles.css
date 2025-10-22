@@ -153,3 +153,59 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+
+
+/* --- Estilos para la Funcionalidad de Pestañas (Tabs) --- */
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #EFEFEF;
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #555555;
+    transition: all 0.3s ease;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    color: #263842;
+}
+
+/* Estilo para la pestaña activa (la viñeta seleccionada) */
+.tab-btn.active {
+    color: #263842;
+    border-bottom: 3px solid #3498db;
+    background-color: #F9F9F9;
+}
+
+/* Ocultar todos los paneles por defecto */
+.tab-pane {
+    display: none;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Mostrar solo el panel activo */
+.tab-pane.active {
+    display: block;
+}
+
+/* Ajustes para títulos dentro de las pestañas */
+.tab-pane h2 {
+    font-size: 1.6em;
+    color: #3498db;
+    margin-bottom: 20px;
+}
