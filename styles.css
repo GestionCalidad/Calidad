@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap');
 
-/* Paleta de Colores de Calidad y Formalidad:
-   - Fondo: #F9F9F9 (Casi blanco)
-   - Pastel Primario: #B3D89C (Verde Salvia Suave)
-   - Madera/Contraste: #6D5C61 (Marrón Topo Formal)
-   - Acumulación/Detalle: #DCE5E8 (Gris Azulado Pastel)
-   - Texto Principal: #333333 (Gris Oscuro)
+/* Colores SGC Corporativo:
+   Fondo Base: #263238 (Gris Oscuro)
+   Fondo Contenedor: #EFEFEF (Gris Claro Formal)
+   Acento/Primario: #00BCD4 (Azul Profundo)
+   Tarjetas: #FFFFFF (Blanco Puro)
 */
 
-/* Reset básico y configuración global */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,8 +14,7 @@
 }
 
 body {
-    /* Fondo limpio y minimalista */
-    background-color: #F9F9F9; 
+    background-color: #263238; /* Fondo Oscuro Corporativo */
     color: #333333;
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -25,94 +22,96 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 40px;
-    overflow: auto;
 }
 
 .menu-container {
+    background-color: #EFEFEF; /* Contenedor Gris Claro */
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Espacio más formal */
-    max-width: 1200px;
+    gap: 30px; 
+    max-width: 1000px;
 }
 
-.menu-sphere {
+.menu-sphere { /* Nombre de clase mantenido para evitar cambiar index.html */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    color: #333333;
+    width: 200px; /* Ancho fijo para las tarjetas */
+    height: 150px; /* Alto fijo para las tarjetas */
+    border-radius: 5px;
+    color: #263238; /* Texto oscuro */
     text-decoration: none;
     text-align: center;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    
-    /* Estilo SGC: Color Pastel suave con sombra sutil */
-    background-color: #DCE5E8; /* Gris azulado pastel */
-    border: 3px solid #B3D89C; /* Borde verde salvia (color primario SGC) */
-    
-    /* Sombra suave y elevada (Neumorfismo plano) */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), /* Sombra exterior suave */
-                inset 0 0 10px rgba(255, 255, 255, 0.5); /* Luz interior sutil */
+
+    /* Estilo Tarjeta SGC */
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+    border: 1px solid #DCE0E3; /* Borde muy claro */
     
     transition: all 0.3s ease-in-out;
 }
 
-/* Tamaños de las esferas (ajustados para ser más uniformes y formales) */
-.small-sphere {
-    width: 180px;
-    height: 180px;
-    font-size: 0.9em;
+/* Efecto al pasar el ratón (Hover) */
+.menu-sphere:hover {
+    transform: translateY(-5px); /* Se levanta */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    border-color: #00BCD4; /* Borde se acentúa */
 }
 
-.medium-sphere {
-    width: 220px;
-    height: 220px;
-    font-size: 1.1em;
+/* Borde de acento inferior en hover */
+.menu-sphere::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
-.large-sphere {
-    width: 260px;
-    height: 260px;
-    font-size: 1.3em;
+.menu-sphere:hover::after {
+    background-color: #00BCD4; /* Azul Profundo de acento */
 }
 
 .sphere-text {
-    font-family: 'Playfair Display', serif; /* Fuente elegante y formal */
+    font-family: 'Oswald', sans-serif; /* Fuente corporativa para el menú */
     font-weight: 700;
-    color: #6D5C61; /* Marrón topo para contraste formal */
-    text-shadow: none; /* Quitamos el neón */
-    letter-spacing: 0.5px;
+    color: #263238;
+    font-size: 1.3em;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 10px;
 }
 
-/* Efecto al pasar el ratón (Hover) */
-.menu-sphere:hover {
-    transform: translateY(-5px) scale(1.05); /* Se eleva y agranda ligeramente */
-    background-color: #EFEFEF; /* Un blanco sutil al tocar */
-    border-color: #6D5C61; /* El borde cambia a color formal */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Sombra más definida */
+/* Eliminamos los diferentes tamaños de esferas, ya que las tarjetas tienen tamaño fijo */
+.small-sphere, .medium-sphere, .large-sphere {
+    width: 220px;
+    height: 140px;
 }
 
 
-/* --- Estilos de las Subpáginas (Formal y Limpio) --- */
+/* --- Estilos de las Subpáginas (Limpios y Serios) --- */
 .content-area {
-    background-color: white; /* Fondo blanco inmaculado */
-    padding: 60px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF; /* Fondo blanco */
+    padding: 40px 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     max-width: 900px;
     text-align: center;
-    border-top: 5px solid #B3D89C; /* Línea de color SGC en la parte superior */
+    border-top: 5px solid #00BCD4; /* Línea de acento SGC */
 }
 
 .content-area h1 {
-    font-family: 'Playfair Display', serif;
-    color: #6D5C61; /* Marrón formal */
-    margin-bottom: 25px;
+    font-family: 'Oswald', sans-serif;
+    color: #263238; 
+    margin-bottom: 20px;
     font-size: 2.2em;
     font-weight: 700;
 }
@@ -122,28 +121,27 @@ body {
     color: #555555;
     font-size: 1.1em;
     line-height: 1.7;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .indicator-image {
     width: 100%;
     max-width: 700px; 
     height: auto;
-    border-radius: 5px; /* Bordes menos redondeados para formalidad */
-    margin-bottom: 40px;
-    border: 1px solid #DCE5E8; /* Borde sutil */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra muy suave para levantar la imagen */
-    transition: transform 0.3s ease;
+    border-radius: 4px;
+    margin-bottom: 35px;
+    border: 1px solid #DCE0E3; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
 }
 
 .back-button {
     display: inline-block;
-    background-color: #B3D89C; /* Verde salvia SGC */
-    color: #333333;
-    padding: 15px 30px;
+    background-color: #00BCD4; /* Azul de acento */
+    color: #FFFFFF;
+    padding: 12px 25px;
     text-decoration: none;
-    border-radius: 5px; 
-    font-weight: 700;
+    border-radius: 4px; 
+    font-weight: 500;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     transition: background-color 0.3s, transform 0.3s;
@@ -151,7 +149,7 @@ body {
 }
 
 .back-button:hover {
-    background-color: #A0C28D; /* Tono de verde ligeramente más oscuro */
+    background-color: #00A3B5; /* Azul ligeramente más oscuro */
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
