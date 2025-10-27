@@ -138,7 +138,7 @@ body {
 .indicator-image {
     width: 100%;
     /* Permite que la imagen ocupe todo el ancho del contenedor (85vw) */
-    max-width: 40%; 
+    max-width: 70%; 
     height: auto;
     border-radius: 4px;
     margin-bottom: 35px;
