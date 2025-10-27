@@ -112,7 +112,7 @@ body {
     
     /* CONFIGURACIÓN CLAVE para el 85% de ancho de pantalla */
     max-width: 80vw; 
-    width: 100%;
+    width: 50%;
     
     text-align: center;
     border-top: 5px solid #3498db;
